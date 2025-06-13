@@ -15,8 +15,11 @@ const Topbar = () => {
     colors = tokens(theme.palette.mode);
     const colorMode = useContext(ColorModeContext);
 
-    return (<Box>
-        
+    return (<Box display="flex" justifyContent="space-between" p={2}>
+        <Box display="flex" backgroundcolor={colors.primary[400]} borderRadius="3px">
+            <InputBase>
+            </InputBase>
+        </Box>
     </Box>)
 }
 
