@@ -163,30 +163,30 @@ export const themeSettings = (mode) => {
     },
     typography: {
       fontFamily: ["Source Sans Pro", "sans-serif"].join(","),
-      frontSize: 12,
+      fontSize: 12,
       h1: {
         fontFamily: ["Source Sans Pro", "sans-serif"].join(","),
-        frontSize: 40,
+        fontSize: 40,
       },
       h2: {
         fontFamily: ["Source Sans Pro", "sans-serif"].join(","),
-        frontSize: 32,
+        fontSize: 32,
       },
       h3: {
         fontFamily: ["Source Sans Pro", "sans-serif"].join(","),
-        frontSize: 24,
+        fontSize: 24,
       },
       h4: {
         fontFamily: ["Source Sans Pro", "sans-serif"].join(","),
-        frontSize: 20,
+        fontSize: 20,
       },
       h5: {
         fontFamily: ["Source Sans Pro", "sans-serif"].join(","),
-        frontSize: 16,
+        fontSize: 16,
       },
       h6: {
         fontFamily: ["Source Sans Pro", "sans-serif"].join(","),
-        frontSize: 14,
+        fontSize: 14,
       },
     },
   };
@@ -208,7 +208,7 @@ export const useMode = () => {
     []
   );
 
-  const theme = useMemo(() => createTheme(themeSettings(mode)), [memo]);
+  const theme = useMemo(() => createTheme(themeSettings(mode)), [mode]);
 
   return [theme, colorMode];
 }
