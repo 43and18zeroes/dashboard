@@ -43,22 +43,25 @@ const Sidebar = () => {
   return (
     <Box
       sx={{
-        "& .pro-icon-wrapper": {
-          backgroundColor: "transparent !important",
-        },
+        // "& .pro-icon-wrapper": {
+        //   backgroundColor: "transparent !important",
+        // },
         "& .ps-sidebar-root": {
           border: "0 !important",
         },
         "& .ps-sidebar-container": {
           background: `${colors.primary[400]} !important`,
         },
-        "& .pro-inner-item": {
-          padding: "5px 35px 5px 20px !important",
-        },
-        "& .pro-inner-item:hover": {
-          color: "#868dfb !important",
-        },
-        "& .pro-menu-item.active": {
+        // "& .ps-menu-button": {
+        //   padding: "5px 35px 5px 20px !important",
+        // },
+        // "& .pro-inner-item:hover": {
+        //   color: "#868dfb !important",
+        // },
+        // "& .pro-menu-item.active": {
+        //   color: "#6870fa !important",
+        // },
+        "& .ps-menu-button.active": {
           color: "#6870fa !important",
         },
         "& .ps-menu-button": {
