@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Sidebar as ProSidebar, Menu, MenuItem } from "react-pro-sidebar"; 
+import { Sidebar as ProSidebar, Menu, MenuItem } from "react-pro-sidebar";
 import { Box, IconButton, Typography, useTheme } from "@mui/material";
 import { Link } from "react-router-dom";
 import { tokens } from "../../theme";
@@ -60,6 +60,12 @@ const Sidebar = () => {
         },
         "& .pro-menu-item.active": {
           color: "#6870fa !important",
+        },
+        "& .ps-menu-button": {
+          transition: "background-color 75ms ease-in-out",
+          "&:hover": {
+            backgroundColor: "#2a3650 !important",
+          },
         },
       }}
     >
