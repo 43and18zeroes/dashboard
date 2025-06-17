@@ -3,9 +3,9 @@ import { CssBaseline } from "@mui/material";
 import { ThemeProvider } from "@mui/material/styles";
 import { Routes, Route } from "react-router-dom"
 import Topbar from "./scenes/global/Topbar";
-// import Sidebar from "./scenes/global/sidebar";
+import Sidebar from "./scenes/global/Sidebar";
 import Dashboard from "./scenes/dashboard";
-import { Sidebar } from "react-pro-sidebar";
+// import { Sidebar } from "react-pro-sidebar";
 // import Team from "./scenes/team";
 // import Invoices from "./scenes/invoices";
 // import Contacts from "./scenes/contacts";
