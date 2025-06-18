@@ -61,8 +61,8 @@ const Sidebar = () => {
         // "& .pro-menu-item.active": {
         //   color: "#6870fa !important",
         // },
-        "& .ps-menu-button.active": {
-          color: "#6870fa !important",
+        "& .ps-menuitem-root.ps-active": {
+          backgroundColor: "#2a3650 !important",
         },
         "& .ps-menu-button": {
           transition: "background-color 75ms ease-in-out",
