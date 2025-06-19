@@ -67,14 +67,17 @@ const Team = () => {
           border: "none",
         },
         "& .MuiDataGrid-cell": {
-          borderBottom: "none",
+          borderTop: "none !important",
         },
         "& .name-column--cell": {
           color: colors.greenAccent[300]
         },
-        "& .MuiDataGrid-columnHeaders": {
-          backgroundColor: colors.blueAccent[700],
+        "& .MuiDataGrid-columnHeader": {
+          backgroundColor: colors.blueAccent[700] + " !important",
           borderBottom: "none",
+        },
+        "& .css-1tdeh38": {
+          borderTop: "none !important",
         },
         "& .MuiDataGrid-virtualScroller": {
           backgroundColor: colors.primary[400],
