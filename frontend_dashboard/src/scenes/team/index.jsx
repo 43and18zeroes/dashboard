@@ -68,6 +68,11 @@ const Team = () => {
         },
         "& .MuiDataGrid-cell": {
           borderTop: "none !important",
+          display: "flex",
+          alignItems: "center",
+        },
+        "& .MuiBox-root p": {
+          lineHeight: "1.6"
         },
         "& .name-column--cell": {
           color: colors.greenAccent[300]
