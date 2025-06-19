@@ -91,6 +91,9 @@ const Team = () => {
           borderTop: "none",
           backgroundColor: colors.blueAccent[700],
         },
+        "& .MuiDataGrid-row": {
+          transition: "background-color 25ms ease-in-out",
+        },
       }}>
         <DataGrid rows={mockDataTeam} columns={columns} />
       </Box>
