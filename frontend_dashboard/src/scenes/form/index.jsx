@@ -1,4 +1,4 @@
-import { Box, Button, Textfiled } from "@mui/material";
+import { Box, Button, TextField } from "@mui/material";
 import { Formik } from "formik";
 import * as yup from "yup";
 import useMediaQuery from "@mui/material";
@@ -18,7 +18,7 @@ const phoneRegExp = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/;
 const userSchema = yup.object().shape({
   firstName: yup.string().required("required"),
   lastName: yup.string().required("required"),
-  email: yup.string().required("required"),
+  email: yup.string().email("invalid email").required("required"),
   contact: yup
     .string()
     .matches(phoneRegExp, "Phone number is not valid")
@@ -43,6 +43,35 @@ const Form = () => {
         initialValues={initialValues}
         validationSchema={userSchema}
       ></Formik>
+      {({
+        values,
+        errors,
+        touched,
+        handleBlur,
+        handleChange,
+        handleSubmit,
+      }) => (
+        <form onSubmit={handleSubmit}>
+          <Box
+            display="grid"
+            gap="30px"
+            gridTemplateColumns="repeat(4, minmax(0, 1fr))"
+            sx={{
+                "& > div": {gridColumn: isNonMobile ? undefined : "span 4"}
+            }}
+          >
+            <TextField fullWidth
+            variant= "filled"
+            type="text"
+            label="First Name"
+            onBlur={handleBlur}
+            onChange={handleChange}
+            value="firstName"
+            name="firstName"
+            error={!!touched.firstName && !!errors.firstName} />
+          </Box>
+        </form>
+      )}
     </Box>
   );
 };
