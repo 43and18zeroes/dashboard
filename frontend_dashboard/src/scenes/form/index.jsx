@@ -13,7 +13,7 @@ const initialValues = {
   address2: "",
 };
 
-const phoneRegExp = /^(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4}$/;
+const phoneRegExp = /^((\+49\s?|0)[1][5-7][0-9]\s?\d{7,8}|(\+\d{1,2}\s)?\(?\d{3}\)?[\s.-]\d{3}[\s.-]\d{4})$/;
 
 const userSchema = yup.object().shape({
   firstName: yup.string().required("required"),
@@ -138,6 +138,11 @@ const Form = () => {
                 helperText={touched.address2 && errors.address2}
                 sx={{ gridColumn: "span 4" }}
               />
+            </Box>
+            <Box display="flex" justifyContent="end" mt="20px">
+              <Button type="submit" color="secondary" variant="contained">
+                Create New User
+              </Button>
             </Box>
           </form>
         )}
