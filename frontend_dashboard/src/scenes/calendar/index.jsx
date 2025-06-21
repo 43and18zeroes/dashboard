@@ -44,9 +44,30 @@ const Calendar = () => {
       selected.event.remove();
     }
   };
-  return <Box m="20px">
-    <Header title="CALENDAR" subtitle="Full Calendar Interactive Page" />
-  </Box>;
+  return (
+    <Box m="20px">
+      <Header title="CALENDAR" subtitle="Full Calendar Interactive Page" />
+
+      <Box display="flex" justifyContent="space-between">
+        <Box
+          flex="1 1 20%"
+          backgroundcolor={colors.primary[400]}
+          p="15px"
+          borderRadius="4px"
+        >
+          <Typography varient="h5">Events</Typography>
+          <List
+            key={event.id}
+            sx={{
+              backgroundColor: colors.greenAccent[500],
+              margin: "10px 0",
+              borderRadius: "2px",
+            }}
+          ></List>
+        </Box>
+      </Box>
+    </Box>
+  );
 };
 
 export default Calendar;
