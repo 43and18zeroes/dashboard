@@ -56,14 +56,26 @@ const Calendar = () => {
           borderRadius="4px"
         >
           <Typography varient="h5">Events</Typography>
-          <List
-            key={event.id}
-            sx={{
-              backgroundColor: colors.greenAccent[500],
-              margin: "10px 0",
-              borderRadius: "2px",
-            }}
-          ></List>
+          <List>
+            {currentEvents.map((event) => (
+              <ListItem
+                key={event.id}
+                sx={{
+                  backgroundColor: colors.greenAccent[500],
+                  margin: "10px 0",
+                  borderRadius: "2px",
+                }}
+              >
+                <ListItemText
+                  primary={event.title}
+                  secondary={
+                    (formatDate(event.start,
+                    { year: "nummeric", month: "short", day: "numeric" }))
+                  }
+                />
+              </ListItem>
+            ))}
+          </List>
         </Box>
       </Box>
     </Box>
