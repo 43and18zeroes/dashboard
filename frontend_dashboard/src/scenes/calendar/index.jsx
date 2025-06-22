@@ -3,8 +3,8 @@ import FullCalendar from "@fullcalendar/react";
 import { formatDate } from "@fullcalendar/core";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
-import listPlugin from "@fullcalendar/list";
 import interactionPlugin from "@fullcalendar/interaction";
+import listPlugin from "@fullcalendar/list";
 import {
   Box,
   List,
@@ -22,7 +22,7 @@ const Calendar = () => {
   const [currentEvents, setCurrentEvents] = useState([]);
 
   const handleDateClick = (selected) => {
-    const title = prompt("Please enter a new title for you event");
+    const title = prompt("Please enter a new title for your event");
     const calendarApi = selected.view.calendar;
     calendarApi.unselect();
 
@@ -46,18 +46,20 @@ const Calendar = () => {
       selected.event.remove();
     }
   };
+
   return (
     <Box m="20px">
-      <Header title="CALENDAR" subtitle="Full Calendar Interactive Page" />
+      <Header title="Calendar" subtitle="Full Calendar Interactive Page" />
 
       <Box display="flex" justifyContent="space-between">
+        {/* CALENDAR SIDEBAR */}
         <Box
           flex="1 1 20%"
-          backgroundcolor={colors.primary[400]}
+          backgroundColor={colors.primary[400]}
           p="15px"
           borderRadius="4px"
         >
-          <Typography varient="h5">Events</Typography>
+          <Typography variant="h5">Events</Typography>
           <List>
             {currentEvents.map((event) => (
               <ListItem
@@ -88,7 +90,7 @@ const Calendar = () => {
         {/* CALENDAR */}
         <Box flex="1 1 100%" ml="15px">
           <FullCalendar
-            height="7vh"
+            height="75vh"
             plugins={[
               dayGridPlugin,
               timeGridPlugin,
@@ -109,8 +111,16 @@ const Calendar = () => {
             eventClick={handleEventClick}
             eventsSet={(events) => setCurrentEvents(events)}
             initialEvents={[
-              { id: "1234", title: "All-day event", date: "2025-06-14"},
-              { id: "4321", title: "Time event", date: "2025-06-25"},
+              {
+                id: "12315",
+                title: "All-day event",
+                date: "2025-06-14",
+              },
+              {
+                id: "5123",
+                title: "Timed event",
+                date: "2025-06-28",
+              },
             ]}
           />
         </Box>
