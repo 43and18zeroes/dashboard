@@ -1,5 +1,6 @@
 import { useState } from "react";
-import FullCalendar, { formatDate } from "@fullcalendar/react";
+import FullCalendar from "@fullcalendar/react";
+import { formatDate } from "@fullcalendar/core";
 import dayGridPlugin from "@fullcalendar/daygrid";
 import timeGridPlugin from "@fullcalendar/timegrid";
 import listPlugin from "@fullcalendar/list";
@@ -69,14 +70,22 @@ const Calendar = () => {
                 <ListItemText
                   primary={event.title}
                   secondary={
-                    (formatDate(event.start,
-                    { year: "nummeric", month: "short", day: "numeric" }))
+                    <Typography>
+                      {formatDate(event.start, {
+                        year: "nummeric",
+                        month: "short",
+                        day: "numeric",
+                      })}
+                    </Typography>
                   }
                 />
               </ListItem>
             ))}
           </List>
         </Box>
+
+        {/* CALENDAR */}
+        
       </Box>
     </Box>
   );
