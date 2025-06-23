@@ -10,8 +10,16 @@ const BarChart = () => {
 
     return (
         <ResponsiveBar
-        
         data={data}
+        theme={{
+            axis: {
+                domain: {
+                    line: {
+                        stroke: colors.grey[100]
+                    }
+                }
+            }
+        }}
         indexBy="country"
         enableLabel={false}
         labelSkipWidth={5}
