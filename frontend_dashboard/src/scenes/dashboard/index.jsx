@@ -13,14 +13,27 @@ import GeographyChart from "../../components/GeographyChart";
 import StatBox from "../../components/StatBox";
 import ProgressCircle from "../../components/ProgressCircle";
 
-
 const Dashboard = () => {
+  const theme = useTheme();
+  const colors = tokens(theme.palette.mode);
+
   return (
-  <Box m="20px">
-    <Box display="flex" justifyContent="space-between" alignItems="center">
-      <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
+    <Box m="20px">
+      <Box display="flex" justifyContent="space-between" alignItems="center">
+        <Header title="DASHBOARD" subtitle="Welcome to your dashboard" />
+      </Box>
+      <Box>
+        <Button
+          sx={{
+            backgroundColor: colors.blueAccent[700],
+            color: colors.grey[100],
+            fontSize: "14px",
+            fontWeight: "bold",
+            padding:"10px 20px",
+          }}
+        ></Button>
+      </Box>
     </Box>
-  </Box>
   );
 };
 
