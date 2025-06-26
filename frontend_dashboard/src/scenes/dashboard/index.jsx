@@ -1,7 +1,7 @@
 import { Box, Button, IconButton, Typography, useTheme } from "@mui/material";
 import { tokens } from "../../theme";
 import Header from "../../components/Header";
-import { mockTransactions } from "../../components/Header";
+import { mockTransactions } from "../../data/mockData";
 import DownloadOutlinedIcon from "@mui/icons-material/DownloadOutlined";
 import EmailIcon from "@mui/icons-material/Email";
 import PointOfSaleIcon from "@mui/icons-material/PointOfSale";
@@ -161,51 +161,60 @@ const Dashboard = () => {
               </IconButton>
             </Box>
           </Box>
-          <Box height="250px" m="-20px 0 0 0">
+          <Box height="250px" mt="-20px 0 0 0">
             <LineChart isDashboard={true} />
           </Box>
-
-          {/* TRANSACTIONS */}
+        </Box>
+        {/* TRANSACTIONS */}
+        <Box
+          gridColumn="span 4"
+          gridRow="span 2"
+          backgroundColor={colors.primary[400]}
+          overflow="auto"
+        >
           <Box
-            gridColumn="span 4"
-            gridRow="span 2"
-            backgroundColor={colors.primary[400]}
-            overflow="auto"
+            display="flex"
+            justifyContent="space-between"
+            alignItems="center"
+            borderBottom={`4px solid ${colors.primary[500]}`}
+            colors={colors.grey[100]}
+            p="15px"
           >
+            <Typography color={colors.grey[100]} variant="h5" fontWeight="600">
+              Recent Tranactions
+            </Typography>
+          </Box>
+          {mockTransactions.map((transaction, i) => (
             <Box
+              key={`${transaction.txId}-${i}`}
               display="flex"
               justifyContent="space-between"
               alignItems="center"
               borderBottom={`4px solid ${colors.primary[500]}`}
-              colors={colors.grey[100]}
               p="15px"
             >
-              <Typography
-                color={colors.grey[100]}
-                variant="h5"
-                fontWeight="600"
-              >
-                Recent Tranactions
-              </Typography>
-            </Box>
-            {mockTransactions.map((transaction, i) => (
-              <Box
-                key={`${transaction.txId}-${i}`}
-                display="flex"
-                justifyContent="space-between"
-                alignItems="center"
-                borderBottom={`4px solid ${colors.primary[500]}`}
-                p="15px"
-              >
-                <Box>
-                  <Typography color={colors.greenAccent[500]} variant="h5" fontWeight="600">{transaction.txId}</Typography>
-                  <Typography color={colors.grey[500]}>{transaction.user}</Typography>
-                </Box>
-                <Box color={colors.greenAccent[100]}>{transaction.date}</Box>
-                <Box backgroundColor={colors.greenAccent[500]} p="5px 10px" borderRadius="4px">{transaction.cost}</Box>
+              <Box>
+                <Typography
+                  color={colors.greenAccent[500]}
+                  variant="h5"
+                  fontWeight="600"
+                >
+                  {transaction.txId}
+                </Typography>
+                <Typography color={colors.grey[500]}>
+                  {transaction.user}
+                </Typography>
               </Box>
-            ))}
-          </Box>
+              <Box color={colors.greenAccent[100]}>{transaction.date}</Box>
+              <Box
+                backgroundColor={colors.greenAccent[500]}
+                p="5px 10px"
+                borderRadius="4px"
+              >
+                {transaction.cost}
+              </Box>
+            </Box>
+          ))}
         </Box>
       </Box>
     </Box>
