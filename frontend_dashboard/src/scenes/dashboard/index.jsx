@@ -124,6 +124,14 @@ const Dashboard = () => {
           />
         </Box>
       </Box>
+
+      {/* ROW 2 */}
+
+      <Box
+        gridColumn="span 8"
+        gridRow="span 2"
+        backgroundColor={color.primary[400]}
+      ></Box>
     </Box>
   );
 };
