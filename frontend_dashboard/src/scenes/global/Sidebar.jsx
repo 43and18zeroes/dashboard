@@ -62,12 +62,12 @@ const Sidebar = () => {
         //   color: "#6870fa !important",
         // },
         "& .ps-menuitem-root.ps-active": {
-          backgroundColor: "#2a3650 !important",
+          backgroundColor: `${colors.primary[800]} !important`,
         },
         "& .ps-menu-button": {
           transition: "background-color 75ms ease-in-out",
           "&:hover": {
-            backgroundColor: "#2a3650 !important",
+            backgroundColor: `${colors.primary[800]} !important`,
           },
         },
       }}
